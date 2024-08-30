@@ -26,6 +26,16 @@ const types = {
         } catch (error) {
 
         }
+    },
+
+    async getOne() {
+        try {
+            const data = await type.findOne();
+
+            return res.status(200).send({ data, message: { success: "type one data" } })
+        } catch (error) {
+
+        }
     }
 
 }
