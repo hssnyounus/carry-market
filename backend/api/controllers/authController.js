@@ -5,6 +5,7 @@ import nodemailer from "nodemailer";
 import { config } from "dotenv";
 // import { sign } from 'jsonwebtoken';
 config();
+
 const { User } = models;
 const { Productsellerdetail } = models;
 const { Order } = models;
@@ -98,7 +99,7 @@ const auth = {
       return next(new Error(error));
     }
   },
-  async AccountVerification(req, res, next) {
+  async accountVerification(req, res, next) {
     try {
       const user = await User.findOne({
         where: {
